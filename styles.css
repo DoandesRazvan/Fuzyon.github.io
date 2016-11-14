@@ -1,0 +1,296 @@
+@charset "UTF-8";
+@media (max-width: 956px) {
+  #projects {
+    flex-direction: column;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.col-50, .col-33, .col-20 {
+  float: left;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.col-33 {
+  width: 33.333333%;
+}
+
+.col-20 {
+  width: 20%;
+}
+
+.primary {
+  font-family: "Oswald", sans-serif;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav {
+  background: #A9ACA9;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  z-index: 1;
+}
+
+.nav a {
+  text-decoration: none;
+  line-height: 60px;
+  color: #E7E9E5;
+  font-size: 21px;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  padding: 13.5px 18px;
+  transition: all 0.3s ease-in;
+}
+
+.nav a:hover {
+  background: #868C86;
+  color: #F8F8F8;
+}
+
+.nav .active {
+  background: #868C86;
+  color: #F8F8F8;
+}
+
+@media (max-width: 669px) {
+  .nav a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 510px) {
+  .nav a {
+    font-size: 10px;
+  }
+}
+
+#about {
+  background: linear-gradient(rgba(178, 178, 178, 0.3), rgba(178, 178, 178, 0.3)), url("images/small_steps.png");
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#about h1 {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+#about hr {
+  width: 4%;
+  border-color: #999;
+  margin: 30px auto;
+}
+
+#about .lead {
+  margin: 0 auto;
+  max-width: 1000px;
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 24px;
+  color: #777;
+  text-align: center;
+}
+
+@media (max-width: 1030px) {
+  #about .lead {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 527px) {
+  #about h1 {
+    text-align: center;
+  }
+}
+
+#projects {
+  background: linear-gradient(rgba(191, 195, 186, 0.5), rgba(191, 195, 186, 0.5)), url("images/gold_scale.png");
+  display: flex;
+}
+
+#projects .col-50 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#projects .col-20 {
+  height: 140px;
+  overflow: hidden;
+}
+
+#projects .col-20 .thumbnail {
+  filter: sepia(50%);
+  height: 100%;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+#projects .col-20 .thumbnail:hover {
+  filter: none;
+}
+
+#projects .col-50:nth-child(1) {
+  align-items: center;
+  justify-content: center;
+  height: 420px;
+}
+
+#projects h1 {
+  text-align: center;
+  margin: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 1266px) {
+  #projects .col-20 {
+    height: 100px;
+  }
+  #projects .col-50:nth-child(1) {
+    height: 300px;
+  }
+}
+
+@media (max-width: 956px) {
+  #projects .col-50 {
+    float: none;
+    width: 100%;
+  }
+  #projects .col-50:nth-child(1) {
+    height: 250px;
+  }
+}
+
+#resume {
+  background: #E0DDD1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+#resume .experience, #resume hr {
+  width: 900px;
+}
+
+#resume h1 {
+  overflow: hidden;
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+#resume hr {
+  border-color: #666;
+  opacity: 0.2;
+}
+
+#resume .experience {
+  min-height: 800px;
+}
+
+#resume .experience .secondary {
+  font-family: "Open Sans Condensed", sans-serif;
+  text-align: left;
+  text-transform: uppercase;
+  margin-top: 10px;
+  color: #666;
+}
+
+#resume .experience .title {
+  font-family: "Ubuntu Condensed", sans-serif;
+  color: #555;
+}
+
+#resume .experience .title::before {
+  content: "• ";
+}
+
+#resume .experience .info {
+  margin-left: 14px;
+  text-align: justify;
+  font-family: "Archivo Narrow", sans-serif;
+  font-size: 18px;
+}
+
+@media (max-width: 956px) {
+  #resume .experience, #resume hr {
+    width: 700px;
+  }
+}
+
+@media (max-width: 752px) {
+  #resume .experience, #resume hr {
+    width: 500px;
+  }
+}
+
+#contact {
+  background: linear-gradient(rgba(68, 68, 68, 0.8), rgba(68, 68, 68, 0.8)), url("images/tweed.png");
+}
+
+#contact .col-50 {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact .col-50 h1 {
+  margin: 0;
+  overflow: hidden;
+  color: lightgray;
+}
+
+#contact .col-50 .fa {
+  color: #999;
+  margin: 0 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#contact .col-50 .fa:hover {
+  color: lightgray;
+}
+
+@media (max-width: 1063px) {
+  #contact .col-50 {
+    float: none;
+    height: 150px;
+    margin: 0 auto;
+  }
+}
+
+#footer {
+  height: 250px;
+  background: linear-gradient(rgba(85, 85, 85, 0.1), rgba(85, 85, 85, 0.1)), url("images/footer_lodyas.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#footer .fa {
+  color: #fffafa;
+  margin: 0 10px;
+}
+
+#footer .footer-title {
+  color: lightgray;
+  font-family: "Open Sans Condensed", sans-serif, sans-serif;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  font-weight: 100;
+}
