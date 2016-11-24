@@ -40,6 +40,9 @@ $tertiary-font: "Ubuntu Condensed", sans-serif;
   text-align: center
   z-index: 1
   
+  #caret
+    display: none
+  
   a
     text-decoration: none
     line-height: 60px
@@ -59,13 +62,24 @@ $tertiary-font: "Ubuntu Condensed", sans-serif;
     color: $dimmed-white
     
   @media (max-width: 669px)
-    a
-      font-size: 14px
-  
-  @media (max-width: 510px)
-    a
-      font-size: 10px
+    overflow: auto
     
+    a
+      padding: 18.5px 18px
+      display: none
+    
+    #caret
+      display: block
+      color: $dimmed-white
+      cursor: pointer
+      align-self: flex-end
+      margin-top: 5px
+      padding-right: 5px
+      
+    .nav-wrapper
+      display: flex
+      flex-direction: column
+      
 #about
   background: linear-gradient(rgba(#B2B2B2, .30), rgba(#B2B2B2, .30)), url("images/small_steps.png")
   height: 500px
@@ -226,6 +240,17 @@ $tertiary-font: "Ubuntu Condensed", sans-serif;
       height: 150px
       margin: 0 auto
       
+  @media (max-width: 944px)
+    .col-50
+      height: 400px
+      flex-direction: column
+      
+      .fa
+        margin: 12px 0
+        
+    .col-50:nth-child(2)
+      height: 100px
+        
 #footer 
   height: 250px
   background: linear-gradient(rgba(#555, .10), rgba(#555, .10)), url("images/footer_lodyas.png")

@@ -1,18 +1,44 @@
+// spaghetti code, need to clean this up at a later stage.
 (function($){
-  $(window).scroll(function(){
-    var scrollTop = $(window).scrollTop();
+  var $caret = $("#caret"),
+      $nav = $(".nav"),
+      $navLinks = $(".nav a");
+  
+  $(window).scroll(scrollFunctionality);
+  $caret.on("click", dropdownFunctionality);
+  
+  function scrollFunctionality() {
+    var scrollTop = $(window).scrollTop(),
+        $aboutNav = $("#about-nav"),
+        $projectsNav = $("#projects-nav"),
+        $resumeNav = $("#resume-nav"),
+        $contactNav = $("#contact-nav");
+    
     if (scrollTop < 196) {
-      $("#about-nav").siblings().removeClass("active")
-      $("#about-nav").addClass("active")
+      $aboutNav.siblings().removeClass("active");
+      $aboutNav.addClass("active");
     } else if (scrollTop < 713) {
-      $("#projects-nav").siblings().removeClass("active")
-      $("#projects-nav").addClass("active")
+      $projectsNav.siblings().removeClass("active");
+      $projectsNav.addClass("active");
     } else if (scrollTop < 1690) {
-      $("#resume-nav").siblings().removeClass("active")
-      $("#resume-nav").addClass("active")
+      $resumeNav.siblings().removeClass("active");
+      $resumeNav.addClass("active");
     } else {
-      $("#contact-nav").siblings().removeClass("active")
-      $("#contact-nav").addClass("active")
+      $contactNav.siblings().removeClass("active");
+      $contactNav.addClass("active");
     }
-  });
+  }
+  
+  function dropdownFunctionality() {
+    if ($caret.hasClass("fa-caret-square-o-down")) {
+      $navLinks.css("display", "block");
+      $caret.removeClass("fa-caret-square-o-down").addClass("fa-caret-square-o-up");
+      $nav.css("height", "542px");
+    } else {
+      $navLinks.css("display", "none");
+      $caret.removeClass("fa-caret-square-o-up").addClass("fa-caret-square-o-down");
+      $nav.css("height", "60px")
+    }
+  }
+  
 })(jQuery)
